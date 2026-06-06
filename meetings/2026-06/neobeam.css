@@ -542,7 +542,7 @@ audio {
 .caption {
     position: absolute;
     bottom: 60px;
-    font-size: 0.3em;
+    font-size: 0.5em;
     left: 0;
     right: 0;
     text-align: center;

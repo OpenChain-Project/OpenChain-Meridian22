@@ -38,7 +38,7 @@ DORA forces the sector to manage open source software
 - Manage vulnerabilities in the supply chain in automated way
 
 
-<div class="caption" style="font-size: 0.3em;">
+<div class="caption">
 https://www.pwc.de/en/risk-regulatory/risk/dora-and-open-source-digital-resilience-in-the-eu-financial-sector.html</div>
 
 ---
