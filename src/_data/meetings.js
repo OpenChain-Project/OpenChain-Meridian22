@@ -20,6 +20,9 @@ function prettifyFilename(filename) {
 
 module.exports = function () {
   const meetingsDir = path.join(__dirname, "../../meetings");
+  const allLabels = JSON.parse(
+    fs.readFileSync(path.join(__dirname, "labels.json"), "utf8")
+  );
   const dirs = fs
     .readdirSync(meetingsDir)
     .filter((d) => fs.statSync(path.join(meetingsDir, d)).isDirectory())
@@ -28,12 +31,13 @@ module.exports = function () {
 
   return dirs.map((dir) => {
     const [year, month] = dir.split("-").map(Number);
+    const labels = allLabels[dir] ?? {};
     const files = fs
       .readdirSync(path.join(meetingsDir, dir))
       .filter((f) => [".pdf"].includes(path.extname(f).toLowerCase()))
       .map((f) => ({
         name: f,
-        label: prettifyFilename(f),
+        label: labels[f] ?? prettifyFilename(f),
         path: `meetings/${dir}/${f}`,
         ext: path.extname(f).toLowerCase().slice(1),
       }));
