@@ -1,0 +1,64 @@
+---
+layout: base.njk
+title: OpenChain Meridian 22
+noHeader: true
+---
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-penguins" aria-hidden="true">
+      <img src="{{ '/media/penguin1.png' | url }}" class="penguin penguin-a" alt="">
+      <img src="{{ '/media/penguin2.png' | url }}" class="penguin penguin-b" alt="">
+    </div>
+
+    <!-- Main content -->
+    <div class="hero-body">
+      <div class="hero-logos">
+        <img src="{{ '/media/openchain.png' | url }}" class="hero-logo logo-oc" alt="OpenChain">
+        <img src="{{ '/media/lxf.png' | url }}" class="hero-logo logo-lxf" alt="The Linux Foundation">
+      </div>
+      <h1 class="hero-title">OpenChain Meridian 22</h1>
+      <p class="hero-tagline">Open Source Compliance · Central &amp; Eastern Europe</p>
+      <p class="hero-desc">
+        A subgroup of the Linux Foundation's
+        <a href="https://openchainproject.org/" class="hero-text-link">OpenChain Project</a>,
+        focusing on countries in and around the 22nd Meridian of the European Continent.
+        We promote the OpenChain community and ISO standards, and discuss local developments
+        in open source compliance and supply chain security.
+      </p>
+      <div class="hero-actions">
+        <a href="https://lists.openchainproject.org/g/meridian22-wg" class="hero-btn hero-btn-primary">
+          Join the mailing list →
+        </a>
+        <a href="https://openchainproject.org/" class="hero-btn hero-btn-secondary">
+          OpenChain Project
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="meetings-section">
+  <div class="container">
+    <h2>Meeting Materials</h2>
+    <div class="meetings-list">
+      {% for meeting in meetings %}
+      <div class="meeting-card">
+        <div class="meeting-header">
+          <span class="meeting-date">{{ meeting.monthName }}</span>
+        </div>
+        <ul class="file-list">
+          {% for file in meeting.files %}
+          <li>
+            <a href="{{ ('/' + file.path) | url }}" class="file-link">
+              <span class="badge badge-{{ file.ext }}">{{ file.ext | upper }}</span>
+              <span class="file-label">{{ file.label }}</span>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

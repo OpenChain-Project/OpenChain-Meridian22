@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title or "OpenChain Meridian 22" }}</title>
+  <link rel="stylesheet" href="{{ '/style.css' | url }}">
+</head>
+<body>
+  {% if not noHeader %}
+  <header>
+    <div class="container header-inner">
+      <h1>OpenChain Meridian 22</h1>
+      <p class="tagline">Open Source Compliance · Central &amp; Eastern Europe</p>
+    </div>
+  </header>
+  {% endif %}
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        OpenChain Meridian 22 Working Group &mdash;
+        <a href="https://openchainproject.org/">OpenChain Project</a> &mdash;
+        <a href="https://lists.openchainproject.org/g/meridian22-wg">Mailing List</a>
+        <br>
+        Content licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
